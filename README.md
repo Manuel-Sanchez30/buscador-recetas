@@ -1,29 +1,9 @@
-# recetas-vue
+# Buscador Recetas
 
-This template should help get you started developing with Vue 3 in Vite.
+## Sitio Web que buscar bebidas con ingredientes especiales y obtener las recetas para prepararlas.
 
-## Recommended IDE Setup
+# Modo de Uso
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+## Utilizar el formulario para ingresar el ingrediente y el tipo de bebida que se quiere preparar, dar click en buscar receta.
+## Seleccionar bebida con el boton #ver receta, vizulaizar Ingredientes e intrucciones.
+## Puedes añadir a Favoritos.
