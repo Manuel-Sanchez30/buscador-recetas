@@ -1,11 +1,21 @@
 <script setup>
+import { RouterLink } from 'vue-router';
+
 
 </script>
 <template>
-    <header>
+    <header class="bg-slate-800">
         <div class="mx-auto container px-5 py-16">
-            <div>
-
+            <div class="flex justify-between items-center">
+                <div>
+                    <RouterLink :to="{name: 'inicio'}">
+                        <img src="/public/img/logo.svg" alt="imagen logo" class="w-32">
+                    </RouterLink>
+                </div>
+                <nav class="text-white font-bold flex gap-2">
+                    <RouterLink :to="{name: 'inicio'}" active-class="text-orange-500">inicio</RouterLink>
+                    <RouterLink :to="{name: 'favoritos'}" active-class="text-orange-500">favoritos</RouterLink>
+                </nav>
             </div>
             <div>
                 <form class="md:w-1/2 2xl:w-1/3 bg-orange-500 my-32 p-10 space-y-6 rounded-lg shadow-md">
