@@ -8,6 +8,10 @@ const store = useBebidasStore();
 
 const paginaInicio = computed(()=> route.name === 'inicio');
 
+const handleSubmit = ()=>{
+    store.obtenerRecetas();
+};
+
 </script>
 <template>
     <header class="bg-slate-800" :class="{header: paginaInicio}">
@@ -24,7 +28,11 @@ const paginaInicio = computed(()=> route.name === 'inicio');
                 </nav>
             </div>
             <div>
-                <form v-if="paginaInicio" class="md:w-1/2 2xl:w-1/3 bg-orange-500 my-32 p-10 space-y-6 rounded-lg shadow-md">
+                <form 
+                    v-if="paginaInicio"
+                    class="md:w-1/2 2xl:w-1/3 bg-orange-500 my-32 p-10 space-y-6 rounded-lg shadow-md"
+                    @submit.prevent="handleSubmit"
+                >
                     <div class="space-y-4">
                         <label 
                             for="ingrediente"
@@ -37,6 +45,7 @@ const paginaInicio = computed(()=> route.name === 'inicio');
                             type="text"
                             class="rounded-md w-full focus outline-none px-2 py-1 font-medium"
                             placeholder="Nombre o Ingredientes"
+                            v-model="store.busqueda.nombre"
                         >
                     </div>
                     <div class="space-y-4">
@@ -50,16 +59,22 @@ const paginaInicio = computed(()=> route.name === 'inicio');
                             name="categoria"
                             id="categoria"
                             class="w-full px-2 py-1 rounded-md"
+                            v-model="store.busqueda.categoria"
                         >
                             <option value="">--Seleccione--</option>
                             <option
                                 v-for="categoria in store.categorias"
                                 :key="categoria.strCategory"
-                                value="categoria.strCategory"
+                                :value="categoria.strCategory"
                             >{{ categoria.strCategory }}</option>
                             
                         </select>
                     </div>
+                    <input 
+                        type="submit"
+                        value="Buscar Receta"
+                        class="text-white w-full font-bold bg-orange-700 rounded-md py-1 cursor-pointer hover:bg-orange-800"
+                    >
                 </form>
             </div>
         </div>
