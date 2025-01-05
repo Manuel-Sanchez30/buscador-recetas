@@ -75,7 +75,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         class="w-1/2 bg-orange-600 rounded-md text-white font-bold hover:bg-orange-700"
                         @click="favorito.handleClickFavorito()"
                     >
-                        Agregar a Favoritos
+                       {{ modal.textoBoton }}
                     </button>
                 </div> 
               </DialogPanel>
