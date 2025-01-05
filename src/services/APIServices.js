@@ -4,7 +4,7 @@ export default {
     obtenerCategorias(){
         return api.get('/list.php?c=list')
     },
-    buscarRecetas({categoria, nombre}){
+    buscarRecetas({nombre, categoria}){
         return api.get(`/filter.php?c=${categoria}&i=${nombre}`)
     }
 }
