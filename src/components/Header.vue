@@ -52,6 +52,11 @@ const paginaInicio = computed(()=> route.name === 'inicio');
                             class="w-full px-2 py-1 rounded-md"
                         >
                             <option value="">--Seleccione--</option>
+                            <option
+                                v-for="categoria in store.categorias"
+                                :key="categoria.strCategory"
+                                value="categoria.strCategory"
+                            >{{ categoria.strCategory }}</option>
                             
                         </select>
                     </div>
