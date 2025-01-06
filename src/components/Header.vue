@@ -15,7 +15,7 @@ const handleSubmit = ()=>{
     //validar formulario 
     if(Object.values(store.busqueda).includes('')){
         notificacion.$patch({
-            texto:'Todos los Campos son Obligatorios',
+            texto:'Todos Los Campos son Obligatorios',
             mostrar: true,
             error: true
         })
