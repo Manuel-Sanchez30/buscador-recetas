@@ -67,7 +67,7 @@ const handleSubmit = ()=>{
                             for="categoria"
                             class="block font-bold text-white uppercase"
                         >
-                            categoria
+                            Categoria
                         </label>
                         <select 
                             name="categoria"
