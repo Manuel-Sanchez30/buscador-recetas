@@ -1,10 +1,12 @@
 <script setup>
 import { useBebidasStore } from '@/stores/bebidas';
 import { useModalStore } from '@/stores/Modal';
+import { useFavoritosStore } from '@/stores/favoritos';
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
 
     const modal = useModalStore();
     const bebidas = useBebidasStore();
+    const favorito = useFavoritosStore();
 
     const formatearIngredientes = ()=>{
         const ingredientesDiv = document.createElement('DIV')
@@ -67,6 +69,13 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         class="w-1/2 bg-orange-600 rounded-md text-white font-bold hover:bg-orange-700"
                     >
                         Cerrar
+                    </button>
+                    <button 
+                        type="button"
+                        class="w-1/2 bg-orange-600 rounded-md text-white font-bold hover:bg-orange-700"
+                        @click="favorito.handleClickFavorito()"
+                    >
+                       {{ modal.textoBoton }}
                     </button>
                 </div> 
               </DialogPanel>
