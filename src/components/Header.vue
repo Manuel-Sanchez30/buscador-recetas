@@ -12,7 +12,7 @@ const paginaInicio = computed(()=> route.name === 'inicio');
 
 const handleSubmit = ()=>{
 
-    //validar formulario
+    //validar formulario 
     if(Object.value(store.busqueda).includes('')){
         notificacion.$patch({
             texto:'Todos los Campos son Obligatorios',
