@@ -39,6 +39,7 @@ const handleSubmit = ()=>{
                 <nav class="text-white font-bold flex gap-2">
                     <RouterLink :to="{name: 'inicio'}" active-class="text-orange-500">inicio</RouterLink>
                     <RouterLink :to="{name: 'favoritos'}" active-class="text-orange-500">favoritos</RouterLink>
+                    <RouterLink :to="{name: 'ia'}" active-class="text-orange-500">Generar con IA</RouterLink>
                 </nav>
             </div>
             <div>
