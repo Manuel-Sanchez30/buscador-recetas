@@ -1,5 +1,26 @@
 <script setup>
-  
+  import { useIAStore } from '@/stores/ia';
+import { useNotificacionStore } from '@/stores/notificacion';
+
+  const store = useIAStore();
+  const notificacion = useNotificacionStore();
+
+  const handleSubmit = ()=>{
+    
+    if(store.promt.trim() === '' ){
+
+      notificacion.$patch({
+        texto:'La busqueda no puede ir vacia',
+        error: true,
+        mostrar: true
+      })
+
+      return
+
+    }
+      store.generarReceta()
+  };
+
 </script>
 
 <template>
@@ -8,11 +29,13 @@
   <div class="max-w-4xl mx-auto">
     <form  
       class='flex flex-col space-y-3 py-10'
+      @submit.prevent="handleSubmit"
     >
       <div class="relative">
         <input 
           name="prompt" 
-          id="prompt" 
+          id="prompt"
+          v-model="store.promt"
           class="border bg-white p-4 rounded-lg w-full border-slate-800" 
           placeholder="Genera una receta con ingredientes. Ej. Bebida con Tequila y Fresa"
         />
