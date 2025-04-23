@@ -4,15 +4,19 @@ import { ref } from "vue";
 import IAService from "@/services/IAService";
 
 export const useIAStore = defineStore('ia', ()=>{
-    const promt = ref('');
+    const prompt = ref('');
     const respuesta = ref('');
 
     async function generarReceta(){
-        await IAService.generarReceta(promt)
+        const resultado = await IAService.generarReceta(prompt.value)
+
+        for await (const texto of resultado){
+            console.log(texto);
+        }
     }
 
     return{
-        promt,
+        prompt,
         respuesta,
         generarReceta
     }
